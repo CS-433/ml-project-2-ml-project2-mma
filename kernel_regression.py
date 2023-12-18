@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 
+############## ---------------------------------------------------- ##############
+
 def Kernel(x, xt, tk, l=1, alpha=1):
 
     '''
@@ -34,6 +36,8 @@ def Kernel(x, xt, tk, l=1, alpha=1):
         for i in range(0,x.shape[0]):
             K[i]=(1+np.sum((xt-x[i])**2, axis=1)/(2*alpha*l**2))**(-alpha)
         return K
+
+############## ---------------------------------------------------- ##############
     
 def K_LR(data2, tk, l=1, alpha=1):
 
@@ -51,6 +55,8 @@ def K_LR(data2, tk, l=1, alpha=1):
     '''
 
     return Kernel(data2, data2, tk, l, alpha)
+
+############## ---------------------------------------------------- ##############
     
 def solve_v_kernel (ret, lambda1, data, f_list, N, Omega, K):
     
@@ -83,6 +89,8 @@ def solve_v_kernel (ret, lambda1, data, f_list, N, Omega, K):
 
     return v, Q
 
+############## ---------------------------------------------------- ##############
+
 def solve_g_kernel(data, f_list, v, t, K):
 
     '''
@@ -105,6 +113,8 @@ def solve_g_kernel(data, f_list, v, t, K):
     
     return g
 
+############## ---------------------------------------------------- ##############
+
 def Gram_matrix(data, v, f_list, t, K):
 
     '''
@@ -124,6 +134,8 @@ def Gram_matrix(data, v, f_list, t, K):
     g=solve_g_kernel(data, f_list, v, t, K)
 
     return g@g.T
+
+############## ---------------------------------------------------- ##############
 
 def solve_f(ret, v, lambda2, data, f_list, Omega, K):
 
@@ -157,6 +169,8 @@ def solve_f(ret, v, lambda2, data, f_list, Omega, K):
 
     return f_list, g, G
 
+############## ---------------------------------------------------- ##############
+
 def kernel_regression(data, ret, f_list, lambda1, lambda2, Omega1, Omega2, max_iter, N, K):
 
     '''
@@ -188,6 +202,8 @@ def kernel_regression(data, ret, f_list, lambda1, lambda2, Omega1, Omega2, max_i
         f_list, g, G = solve_f(ret, v, lambda2, data, f_list, Omega2, K)
 
     return f_list, v, Q, g, G
+
+############## ---------------------------------------------------- ##############
 
 def pivoted_chol(K, m_hat):
 
@@ -233,6 +249,8 @@ def pivoted_chol(K, m_hat):
 
     return L,B
 
+############## ---------------------------------------------------- ##############
+
 def solve_v_LR(data, B, ret, f_list, K, lambda1, Omega, m_hat):
 
     '''
@@ -263,6 +281,8 @@ def solve_v_LR(data, B, ret, f_list, K, lambda1, Omega, m_hat):
 
     return v
 
+############## ---------------------------------------------------- ##############
+
 def solve_g_kernel_LR(B, v, t, K, N):
 
     '''
@@ -285,6 +305,8 @@ def solve_g_kernel_LR(B, v, t, K, N):
 
     return g
 
+############## ---------------------------------------------------- ##############
+
 def gram_matrix_LR(B, v, t, K, N):
 
     '''
@@ -304,6 +326,8 @@ def gram_matrix_LR(B, v, t, K, N):
     g = solve_g_kernel_LR(B, v, t, K, N)
 
     return g@g.T
+
+############## ---------------------------------------------------- ##############
 
 def solve_f_LR(ret, v, B, lambda2, data, Omega, K, N):
 
@@ -336,6 +360,8 @@ def solve_f_LR(ret, v, B, lambda2, data, Omega, K, N):
         f_list_new.append(g.T@c)
 
     return f_list_new, G, g
+
+############## ---------------------------------------------------- ##############
 
 def kernel_regression_LR(data, K, B, ret, f_list, lambda1, lambda2, Omega, max_iter, m_hat, N):
 

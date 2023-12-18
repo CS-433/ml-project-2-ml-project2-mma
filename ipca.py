@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 
+############## ---------------------------------------------------- ##############
+
 def gamma_first(ret, data, k):
 
     '''
@@ -30,6 +32,8 @@ def gamma_first(ret, data, k):
 
     return gamma_first
 
+############## ---------------------------------------------------- ##############
+
 def solve_f(ret, data, gamma, idx):
 
     '''
@@ -46,6 +50,8 @@ def solve_f(ret, data, gamma, idx):
     '''
 
     return np.linalg.solve(gamma.T@data[idx].values.T@data[idx].values@gamma, gamma.T@data[idx].values.T@ret[idx].values)
+
+############## ---------------------------------------------------- ##############
 
 def solve_gamma(ret, data, f):
     
@@ -65,6 +71,8 @@ def solve_gamma(ret, data, f):
     B = np.sum([np.kron(data[i].values,f[i].reshape((1,-1))).T@ret[i] for i in range(len(data))], axis=0)
     vec_gamma = np.linalg.solve(A, B)
     return vec_gamma.reshape((94, len(f[0])))
+
+############## ---------------------------------------------------- ##############  
 
 def ipca(data, ret, gamma, max_iter):
     
@@ -110,6 +118,8 @@ def ipca(data, ret, gamma, max_iter):
 
     return gamma, f_list
 
+############## ---------------------------------------------------- ##############
+
 def solve_f_reg_w(ret, data, gamma, idx, lambda_, W ):
 
     '''
@@ -129,6 +139,8 @@ def solve_f_reg_w(ret, data, gamma, idx, lambda_, W ):
 
     return np.linalg.solve(gamma.T@data[idx].values.T@W@data[idx].values@gamma + lambda_*np.eye(gamma.shape[1]), 
                            gamma.T@data[idx].values.T@W@ret[idx].values)
+
+############## ---------------------------------------------------- ##############
 
 def solve_gamma_reg_w(ret, data, f, lambda_, W, gamma):
     
@@ -154,6 +166,8 @@ def solve_gamma_reg_w(ret, data, f, lambda_, W, gamma):
 
     vec_gamma = np.linalg.solve(A, B)
     return vec_gamma.reshape((94, len(f[0])))
+
+############## ---------------------------------------------------- ##############
 
 def ipca_reg_w(data, ret, gamma_reg_w, max_iter, lambda1, lambda2, W_list):
 

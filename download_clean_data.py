@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import os
 
+############## ---------------------------------------------------- ##############
+
 def standardize(df):
 
     '''
@@ -16,6 +18,8 @@ def standardize(df):
 
     return (df - df.mean()) / df.std()
 
+############## ---------------------------------------------------- ##############
+
 def fill_missing(df):
 
     '''
@@ -29,6 +33,8 @@ def fill_missing(df):
     '''
 
     return df.fillna(0)
+
+############## ---------------------------------------------------- ##############
 
 def download_clean_data(folder_path, start_date,ending_date, N):
 

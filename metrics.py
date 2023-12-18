@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 
+############## ---------------------------------------------------- ##############
+
 def total_R_squared(ret, data, gamma, f_list):
 
     '''
@@ -25,6 +27,8 @@ def total_R_squared(ret, data, gamma, f_list):
             ret_2 += ret[t].iloc[i]**2
     
     return 1 - sum/ret_2
+
+############## ---------------------------------------------------- ##############
 
 def pred_R_squared(ret, data, gamma, f_list):
 
@@ -52,6 +56,8 @@ def pred_R_squared(ret, data, gamma, f_list):
     
     return 1 - sum/ret_2
 
+############## ---------------------------------------------------- ##############
+
 def total_R_squared_kr(ret, Q, v):
 
     '''
@@ -69,6 +75,8 @@ def total_R_squared_kr(ret, Q, v):
     R = np.array(ret).flatten()
 
     return 1 - np.sum((R-Q@v)**2)/np.sum(R**2)
+
+############## ---------------------------------------------------- ##############
 
 def total_R_squared_kr_out_os(ret, g_list, c_list):
 
@@ -97,6 +105,8 @@ def total_R_squared_kr_out_os(ret, g_list, c_list):
             ret_2 += ret[t].iloc[i]**2
     
     return 1 - sum/ret_2
+
+############## ---------------------------------------------------- ##############
 
 def total_R_squared_kr_LR(ret, B, K, v, f_list):
 

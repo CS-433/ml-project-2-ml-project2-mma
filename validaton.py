@@ -13,6 +13,8 @@ importlib.reload(ipca)
 importlib.reload(metrics)
 importlib.reload(kr)
 
+############## ---------------------------------------------------- ##############
+
 def split_dataset(x, y, trsh):
 
     '''
@@ -38,6 +40,8 @@ def split_dataset(x, y, trsh):
     y_test=y[n:]
         
     return x_train, y_train, x_test, y_test
+
+############## ---------------------------------------------------- ##############
 
 def val_IPCA(y, x, trsh, gamma_first, max_iter):
 
@@ -68,6 +72,8 @@ def val_IPCA(y, x, trsh, gamma_first, max_iter):
     total_R2_dict[('IPCA')] = metrics.total_R_squared(yy_test, xx_test, gamma, yy_pred)
 
     return total_R2_dict
+
+############## ---------------------------------------------------- ##############
 
 def val_IPCA_reg(y, x, trsh, lambda1_v, lambda2_v, gamma_first, max_iter, W_list):
 
@@ -106,6 +112,8 @@ def val_IPCA_reg(y, x, trsh, lambda1_v, lambda2_v, gamma_first, max_iter, W_list
             total_R2_dict[('IPCA_reg', lambda1, lambda2)] = metrics.total_R_squared(yy_test, xx_test, gamma_reg_w, yy_pred)
             
     return total_R2_dict
+
+############## ---------------------------------------------------- ##############
 
 def val_gaussian(y, x, trsh, lambda1_v, lambda2_v, l_v, N, f_list_input, Omega2, max_iter):
 
@@ -163,6 +171,8 @@ def val_gaussian(y, x, trsh, lambda1_v, lambda2_v, l_v, N, f_list_input, Omega2,
                 total_R2_dict[('Gaussian', lambda1, lambda2, l)] = metrics.total_R_squared_kr_out_os(yy_test, g_list, c_list)
                 
     return total_R2_dict
+
+############## ---------------------------------------------------- ##############
 
 def val_rq(y, x, trsh, lambda1_v, lambda2_v, l_v, alphas_v, N, f_list_input, Omega2, max_iter):
 
@@ -224,6 +234,8 @@ def val_rq(y, x, trsh, lambda1_v, lambda2_v, l_v, alphas_v, N, f_list_input, Ome
                 
     return total_R2_dict
 
+############## ---------------------------------------------------- ##############
+
 def val_linear(y, x, trsh, lambda1_v, lambda2_v, N, f_list_input, Omega2, max_iter):
 
     '''
@@ -278,6 +290,8 @@ def val_linear(y, x, trsh, lambda1_v, lambda2_v, N, f_list_input, Omega2, max_it
                 
     return total_R2_dict
 
+############## ---------------------------------------------------- ##############
+
 def surface_IPCA(dictionary, lambdas1, lambdas2):
 
     '''
@@ -305,6 +319,8 @@ def surface_IPCA(dictionary, lambdas1, lambdas2):
                     z[l1, l2] = v
     
     return z
+
+############## ---------------------------------------------------- ##############
 
 def surface_gaussian(dictionary, lambdas1, lambdas2):
 
@@ -334,6 +350,8 @@ def surface_gaussian(dictionary, lambdas1, lambdas2):
                     z[l1, l2] = v
     
     return z
+
+############## ---------------------------------------------------- ##############
 
 def surface_rq(dictionary, lambdas1, lambdas2):
 
