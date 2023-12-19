@@ -15,7 +15,7 @@ Our team is composed by:
 
 ## Project
 
-In this project we applied machine learning techniques to finance and especially to factor models using Instrumental Principal Component Analisys (IPCA) and Kernel regression. IPCA allows factor loadings to be a linear function of stocks' characteristics overcoming some limitations of standard factor model. Kernel regression further allows us to have a non-linear relationship between factor loadings and stocks' characteristics. In the report, we present the final results of the analysis, as well as the methods we used to perform it.
+In this project we applied machine learning techniques to finance and especially to factor models using Instrumental Principal Component Analisys (IPCA) and Kernel regression. IPCA allows factor loadings to be a linear function of stocks' characteristics overcoming some limitations of standard factor model. Kernel regression further allows to have a non-linear relationship between factor loadings and stocks' characteristics. In the report, we present the final results of the analysis, as well as the methods we used to perform it.
 
 ## Dataset
 
