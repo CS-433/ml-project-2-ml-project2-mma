@@ -198,7 +198,7 @@ def ipca_reg_w(data, ret, gamma_reg_w, max_iter, lambda1, lambda2, W_list):
         f_list_new = []
 
         for i in range(len(data)):
-            f = solve_f_reg_w(ret, data, gamma_reg_w, i, lambda1, W_list[i])
+            f = solve_f_reg_w(ret, data, gamma_reg_w, i, lambda2, W_list[i])
             f_list_new.append(f)
             if first:
                 f_change = f-f_list_reg_w[i]
@@ -206,7 +206,7 @@ def ipca_reg_w(data, ret, gamma_reg_w, max_iter, lambda1, lambda2, W_list):
         first = True
         f_list_reg_w = f_list_new.copy()
 
-        gamma_new = solve_gamma_reg_w(ret, data, f_list_reg_w, lambda2, W_list, gamma_reg_w)
+        gamma_new = solve_gamma_reg_w(ret, data, f_list_reg_w, lambda1, W_list, gamma_reg_w)
         gamma_change = np.abs(gamma_new-gamma_reg_w)
         temp.append(np.max(gamma_change))
         gamma_reg_w = gamma_new.copy()
