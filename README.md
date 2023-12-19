@@ -51,8 +51,5 @@ It's also possible to run only 'run.ipynb' since we have already saved the dicti
 
 'validation_run.ipynb' takes six hours to run while 'run.ipynb' takes an hour.
 
-## Results
-
-
 
 
