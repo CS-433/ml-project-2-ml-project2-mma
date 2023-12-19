@@ -106,7 +106,7 @@ def val_IPCA_reg(y, x, trsh, lambda1_v, lambda2_v, gamma_first, max_iter, W_list
 
             for i in range(len(xx_test)):
 
-                f = ipca.solve_f_reg_w(yy_test, xx_test, gamma_reg_w, i, lambda1, W_list[i])
+                f = ipca.solve_f_reg_w(yy_test, xx_test, gamma_reg_w, i, lambda2, W_list[i])
                 yy_pred.append(f)
 
             total_R2_dict[('IPCA_reg', lambda1, lambda2)] = metrics.total_R_squared(yy_test, xx_test, gamma_reg_w, yy_pred)
