@@ -52,10 +52,10 @@ The data employed in this project comprises of a list of datasets indexed by dat
 
 You need to clone this repository.
 
-Then you need to have the Data folder in the same folder with all the other files and to set the variable 'folder_path' in the code to the path of monthly_data (which is a folder contained in Data).
+Then you need to put the Data folder in the folder with all the other files: consequently, you need to set the variable 'folder_path' in the code to the path of monthly_data (which is a folder contained in Data).
 
-Finally you can run 'validation_run.ipynb' to get the optimal parameters and 'run.ipynb' to get the results and plots.
-It's also possible to run only 'run.ipynb' since we have already saved the dictionaries with optimal parameters.
+Finally you can run 'validation_run.ipynb' to get the optimal parameters, and 'run.ipynb' to get the results and plots.
+It is also possible to run only 'run.ipynb', since we have already saved the dictionaries with optimal parameters.
 
 'validation_run.ipynb' takes six hours to run while 'run.ipynb' takes an hour.
 
