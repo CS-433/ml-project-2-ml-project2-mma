@@ -32,6 +32,13 @@ The data employed in this project comprises of a list of datasets indexed by dat
 - 'validation_run.ipynb' contains the code to run the validation in order to obtain the best parameters for each model.
 - 'run.ipynb' contains the code that produces the final results of our analysis.
 
+## Other files
+
+- 'report.pdf' contains our project report.
+- 'dict_IPCA_reg.pickle' contains the result of the validation of IPCA regularized.
+- 'dict_gaussian.pickle' contains the result of the validation of gaussian kernel regression.
+- 'dict_rq.pickle' contains the result of the validation of rational quadratic kernel regression.
+
 ## Libraries 
 
 - Numpy : used to manipulate arrays and matrices, and perform linear algebra operations.
