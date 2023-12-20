@@ -19,6 +19,7 @@ In this project we applied machine learning techniques to finance and especially
 
 ## Dataset
 
+The data can be downloaded from this link https://drive.switch.ch/index.php/s/MIN35MEq1fdz9kC, using the following password: MMAMLproject2!.
 The data employed in this project comprises of a list of datasets indexed by date. Each date corresponds to a month from January 1926 to December 2020, and each dataset contains 94 different characteristics on n stocks as well as the returns. In our project we use just the top 100 stocks based on market cap and years from 2000 to 2020.
 
 ## Code structure 
